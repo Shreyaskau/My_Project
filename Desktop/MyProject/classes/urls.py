@@ -1,13 +1,25 @@
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from .views import ClassViewSet, SubjectViewSet, TeacherAssignmentViewSet, ScheduleViewSet
-
-router = DefaultRouter()
-router.register(r'Classes', ClassViewSet)
-router.register(r'subjects', SubjectViewSet)
-router.register(r'teacher-assignments', TeacherAssignmentViewSet)
-router.register(r'schedules', ScheduleViewSet)
+from django.urls import path
+from .views import (
+    ClassListCreateView, ClassDetailView,
+    SubjectListCreateView, SubjectDetailView,
+    TeacherAssignmentListCreateView, TeacherAssignmentDetailView,
+    ScheduleListCreateView, ScheduleDetailView
+)
 
 urlpatterns = [
-    path('', include(router.urls)),
+    # Classes
+    path('classes/', ClassListCreateView.as_view(), name='class-list'),
+    path('classes/<int:pk>/', ClassDetailView.as_view(), name='class-detail'),
+
+    # Subjects
+    path('subjects/', SubjectListCreateView.as_view(), name='subject-list'),
+    path('subjects/<int:pk>/', SubjectDetailView.as_view(), name='subject-detail'),
+
+    # Teacher Assignments
+    path('teacher-assignments/', TeacherAssignmentListCreateView.as_view(), name='teacherassignment-list'),
+    path('teacher-assignments/<int:pk>/', TeacherAssignmentDetailView.as_view(), name='teacherassignment-detail'),
+
+    # Schedules
+    path('schedules/', ScheduleListCreateView.as_view(), name='schedule-list'),
+    path('schedules/<int:pk>/', ScheduleDetailView.as_view(), name='schedule-detail'),
 ]
