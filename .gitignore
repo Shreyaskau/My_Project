@@ -1,4 +1,61 @@
-# Python
+# Exclude everything by default
+*
+
+# But include the security_officer_app project
+!Desktop/security_officer_app/
+
+# Personal files and directories
+.android/
+.bash_history
+.cache/
+.cursor/
+.gitconfig
+.gradle/
+.lesshst
+.python_history
+.viminfo
+AppData/
+Documents/
+Favorites/
+IntelGraphicsProfiles/
+Links/
+OneDrive/
+Pictures/
+Postman/
+Searches/
+Videos/
+NTUSER.DAT*
+ntuser.dat*
+ntuser.ini
+edb_pgagent_pg17.exe
+mandap/
+
+# Other projects
+AI-Interview/
+AI-interview2/
+accounts/
+admin_panel/
+banner/
+backend_django/
+daily_banner_app/
+daily_banner_app - Copy/
+MyProject/
+School management system/
+subscription/
+
+# System files
+*.exe
+*.lnk
+*.cfg
+*.jpg
+*.jpeg
+*.png
+*.pdf
+*.zip
+*.mp4
+*.html
+
+# Python (for other projects)
 __pycache__/
 *.py[cod]
 *$py.class
@@ -19,8 +76,12 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+venv/
+env/
+ENV/
+.venv
 
-# Django
+# Django (for other projects)
 *.log
 local_settings.py
 db.sqlite3
@@ -28,12 +89,6 @@ db.sqlite3-journal
 /media
 /staticfiles
 /static
-
-# Virtual Environment
-venv/
-env/
-ENV/
-.venv
 
 # IDE
 .vscode/
@@ -50,9 +105,3 @@ desktop.ini
 # Environment variables
 .env
 .env.local
-
-# Migrations (optional - uncomment if you don't want to track migrations)
-# */migrations/*.py
-# !*/migrations/__init__.py
-
-
